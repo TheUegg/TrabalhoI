@@ -169,7 +169,7 @@ public class TecladoPanelL2 extends JPanel{
 			}
 		});
 		
-		line2[9].addKeyListener( new KeyListener(){
+		line2[9].addKeyListener( new KeyListener(){ 
 			public void keyPressed(KeyEvent e){
 				if(e.getKeyCode() == KeyEvent.VK_O) {
 					line2[9].setBackground(Color.GREEN);
