@@ -231,7 +231,7 @@ public class TecladoPanelL3 extends JPanel{
 			public void keyTyped(KeyEvent e) {
 			}
 		});
-	}
+	} 
 	
 	public void addComponent(Component component, int row, int column,int width,int height) {
 		conteiner.gridy = row;
