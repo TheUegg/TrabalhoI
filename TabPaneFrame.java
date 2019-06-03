@@ -21,7 +21,8 @@ import javax.swing.JButton;
 
 public class TabPaneFrame extends JFrame {
 	String coletora;// Coletoda da frase escolhida
-	char[] coletada;
+	int tamanho;
+	char[] coletada = new char[tamanho];
 	
 	GridBagLayout layoutTeclado = new GridBagLayout();
 	GridBagConstraints conteiner;
@@ -39,20 +40,40 @@ public class TabPaneFrame extends JFrame {
 		panel1.setLayout(new BorderLayout());
 		conteiner = new GridBagConstraints();
 		Box boxVerticalTab2 = Box.createVerticalBox();
+		Box boxHorizontal1 = Box.createHorizontalBox();
+		Box boxHorizontal2 = Box.createHorizontalBox();
+		Box boxHorizontal3 = Box.createHorizontalBox();
+		Box boxHorizontal4 = Box.createHorizontalBox();
 		
-		JTextArea area1 = new JTextArea("alo",7,600);
+		JTextArea area1 = new JTextArea("Escolha um Pangrama",7,60);
 		panelText.add(area1);
 		panel1.add(panelText, BorderLayout.NORTH);
 		
-		JLabel FraseEscolhida = new JLabel("Frase escolhida:"+coletada);
+		JLabel FraseEscolhida = new JLabel("Frase escolhida:");
 		JLabel FraseCompleta = new JLabel("Frase Completa:");
 		JLabel acertos = new JLabel("Numero de acertos:");
 		JLabel erros = new JLabel("Numero de erros:");
-
-		boxVerticalTab2.add(FraseEscolhida);
-		boxVerticalTab2.add(FraseCompleta);
-		boxVerticalTab2.add(acertos);
-		boxVerticalTab2.add(erros);
+		JTextArea areaFrase1 = new JTextArea(" ",1,2);
+		JTextArea areaFrase2 = new JTextArea(" ",1,2);
+		JTextArea areaFrase3 = new JTextArea(" ",1,2);
+		JTextArea areaFrase4 = new JTextArea(" ",1,2);
+		
+		boxHorizontal1.add(FraseEscolhida);
+		boxHorizontal1.add(areaFrase1);
+		
+		boxHorizontal2.add(FraseCompleta);
+		boxHorizontal2.add(areaFrase2);
+		
+		boxHorizontal3.add(acertos);
+		boxHorizontal3.add(areaFrase3);
+		
+		boxHorizontal4.add(erros);
+		boxHorizontal4.add(areaFrase4);
+		
+		boxVerticalTab2.add(boxHorizontal1);
+		boxVerticalTab2.add(boxHorizontal2);
+		boxVerticalTab2.add(boxHorizontal3);
+		boxVerticalTab2.add(boxHorizontal4);
 		panelData.add(boxVerticalTab2);
 		panel1.add(panelData, BorderLayout.WEST);
 			
@@ -91,6 +112,9 @@ public class TabPaneFrame extends JFrame {
 				if(primeiro.isSelected()) {
 					coletora = primeiro.getText();
 					coletada = coletora.toCharArray();
+					tamanho = 48;
+					area1.setText("");
+					areaFrase1.setText(coletora);
 				}
 			}
 		});														//Action listener dos botoes
@@ -100,6 +124,9 @@ public class TabPaneFrame extends JFrame {
 				if(segundo.isSelected()) {
 					coletora = segundo.getText();
 					coletada = coletora.toCharArray();
+					tamanho = 41;
+					area1.setText("");
+					areaFrase1.setText(coletora);
 				}
 			}
 		});
@@ -109,6 +136,9 @@ public class TabPaneFrame extends JFrame {
 				if(terceiro.isSelected()) {
 					coletora = terceiro.getText();
 					coletada = coletora.toCharArray();
+					tamanho = 41;
+					area1.setText("");
+					areaFrase1.setText(coletora);
 				}
 			}
 		});
@@ -118,6 +148,9 @@ public class TabPaneFrame extends JFrame {
 				if(quarto.isSelected()) {
 					coletora = quarto.getText();
 					coletada = coletora.toCharArray();
+					tamanho = 41;
+					area1.setText("");
+					areaFrase1.setText(coletora);
 				}
 			}
 		});
@@ -127,6 +160,9 @@ public class TabPaneFrame extends JFrame {
 				if(quinto.isSelected()) {
 					coletora = quinto.getText();
 					coletada = coletora.toCharArray();
+					tamanho = 50;
+					area1.setText("");
+					areaFrase1.setText(coletora);
 				}
 			}
 		});
